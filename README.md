@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+## Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Dashboard Application is designed to provide a comprehensive overview of business metrics, recent orders, and customer feedback. It features a clean, modern UI that is responsive across all devices. The application is built using ReactJS for the frontend and styled with TailwindCSS for easy customization and scalability.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Responsive Design:** Ensures compatibility across various screen sizes and devices.
+- **Activity Charts:** Visual representation of activities over different time periods (hourly, daily, weekly, monthly) using Chart.js.
+- **Recent Orders:** Displays a list of recent orders with customer details, order number, amount, and status.
+- **Customer Feedback:** Shows customer feedback with ratings and comments.
+- **Key Performance Indicators:** Displays metrics such as total orders, delivered orders, canceled orders, and total revenue.
+- **Notification Indicator:** Includes a notification bell with a green dot to indicate new notifications.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To run this project locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the repository:**
 
-### `npm test`
+   ```bash
+   git clone https://github.com/iqram3/dashboard
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   cd dashboard
+   npm install
+   npm start
+   The application will be available at http://localhost:3000
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   After starting the development server, you can view the dashboard in your web browser. The application will provide you with an overview of recent activities, orders, customer feedback, and key performance metrics.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   **Components**
+## Header
+    The header includes a search bar and icons for messages, settings, notifications, and the user profile. A green dot indicates new notifications.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Activity Chart
+    Displays activity data in a bar chart format with options to switch between hourly, daily, weekly, and monthly views.
 
-### `npm run eject`
+## Recent Orders
+    Shows a table of recent orders with customer names, order numbers, amounts, and statuses. The table is hidden on smaller screens and replaced with a more compact view.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Customer Feedback
+    Lists customer feedback with their profile images, names, comments, and ratings.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Key Performance Indicators (Cards)
+    Four cards display key metrics: Total Orders, Total Delivered, Total Cancelled, and Total Revenue.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Net Profit Card
+    Shows the net profit value and percentage.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Goals
+    Displays the progress towards various business goals.  
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technologies
+ - **ReactJS:** A JavaScript library for building user interfaces.
+ - **TailwindCSS:** A utility-first CSS framework for rapid UI development.
+ - **Chart.js:** A JavaScript library for creating charts.
+ - **React Icons:** For including icons in React applications.
+  
+## License
+    This project is licensed under the MIT License. See the LICENSE file for details.
