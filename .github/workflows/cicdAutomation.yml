@@ -1,6 +1,5 @@
 name: CI/CD for GitHub Pages
 
-# Trigger the workflow on push to the main branch
 on:
   push:
     branches:
@@ -34,16 +33,14 @@ jobs:
         run: npm install --save-dev @babel/plugin-proposal-private-property-in-object
 
       - name: Build Project
+        run: npm run build
+
+      - name: Configure Git
         run: |
-          # Option 1: If you decide to ignore warnings:
-          # CI=false npm run build
-          
-          # Option 2: Without ignoring warnings, after fixing them:
-          npm run build
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
 
       - name: Deploy to GitHub Pages
         run: |
           npm install -g gh-pages
-          gh-pages -d build -b gh-pages -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-
-
+          gh-pages -d build -b gh-pages -r https://x-access-token:${{ secrets.DEPLOYEMENT_TOKEN }}@github.com/${{ github.repository }}
