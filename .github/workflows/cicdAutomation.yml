@@ -41,6 +41,12 @@ jobs:
           # Option 2: Without ignoring warnings, after fixing them:
           npm run build
 
+      - name: Configure Git
+        run: |
+          git config --global user.name "${{ secrets.GIT_USERNAME }}"
+          git config --global user.email "${{ secrets.GIT_EMAIL }}"
+
+
       - name: Deploy to GitHub Pages
         run: |
           npm install -g gh-pages
