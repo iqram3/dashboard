@@ -159,7 +159,7 @@ const Dashboard = () => {
   return (
     <div className="p-4 flex flex-col gap-4">
       {/* Dashboard Heading */}
-      <h2 className="text-2xl font-bold text-white">Dashboard Testing</h2>
+      <h2 className="text-2xl font-bold text-white">Dashboard</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {/* Left Column */}
