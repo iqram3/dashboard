@@ -28,7 +28,6 @@ const Header = () => {
         <div>
           <img
             src="https://img.freepik.com/premium-vector/businessman-avatar-illustration-cartoon-user-portrait-user-profile-icon_118339-4382.jpg"
-            alt="User Profile Picture"
             className="w-10 h-10 md:w-12 md:h-12 rounded-full"
           />
         </div>
