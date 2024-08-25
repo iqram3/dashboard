@@ -1,0 +1,48 @@
+name: CI/CD for GitHub Pages
+
+# Trigger the workflow on push to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the latest code from the main branch
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Node.js with the specified version
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Cache npm dependencies to speed up build process
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Build the project
+      - name: Build Project
+        run: npm run build
+
+      # Deploy the build output to the gh-pages branch
+      - name: Deploy to GitHub Pages
+        run: |
+          # Install gh-pages CLI
+          npm install -g gh-pages
+          # Deploy to gh-pages branch
+          gh-pages -d build -b gh-pages -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
