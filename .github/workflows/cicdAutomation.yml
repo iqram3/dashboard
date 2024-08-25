@@ -1,6 +1,5 @@
 name: CI/CD for GitHub Pages
 
-# Trigger the workflow on push to the main branch
 on:
   push:
     branches:
@@ -44,4 +43,4 @@ jobs:
       - name: Deploy to GitHub Pages
         run: |
           npm install -g gh-pages
-          gh-pages -d build -b gh-pages -r https://x-access-token:${{ secrets.Deployment_Access_Token }}@github.com/${{ github.repository }}
+          gh-pages -d build -b gh-pages -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
