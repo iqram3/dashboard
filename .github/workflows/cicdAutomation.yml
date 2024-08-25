@@ -11,17 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the latest code from the main branch
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Set up Node.js with the specified version
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      # Cache npm dependencies to speed up build process
       - name: Cache npm dependencies
         uses: actions/cache@v3
         with:
@@ -30,19 +27,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # Install dependencies
       - name: Install Dependencies
         run: npm install
 
-      # Build the project
-      - name: Build Project
-        run: npm run build
+      - name: Add Missing Babel Plugin
+        run: npm install --save-dev @babel/plugin-proposal-private-property-in-object
 
-      # Deploy the build output to the gh-pages branch
+      - name: Build Project
+        run: |
+          # Option 1: If you decide to ignore warnings:
+          # CI=false npm run build
+          
+          # Option 2: Without ignoring warnings, after fixing them:
+          npm run build
+
       - name: Deploy to GitHub Pages
         run: |
-          # Install gh-pages CLI
           npm install -g gh-pages
-          # Deploy to gh-pages branch
           gh-pages -d build -b gh-pages -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
 
